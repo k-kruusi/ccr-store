@@ -1,0 +1,34 @@
+{
+  "name": "@agentruntime/ccr-store",
+  "version": "0.1.0",
+  "description": "Bounded LRU store for CCR (Compressed Content Recovery) chunks — the recovery half of token-funnel's funnelReversible(). Lets any cartridge compress bulk tool output to a budget while keeping every removed chunk expandable by its <<ccr:HASH>> marker, instead of choosing between a context blowout and a silent drop.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "!dist/__tests__",
+    "!dist/**/*.js.map"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-kruusi/claude-supervisor.git",
+    "directory": "dependencies/ccr-store"
+  },
+  "dependencies": {
+    "@agentruntime/token-funnel": "file:../token-funnel"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  }
+}
